@@ -19,8 +19,8 @@ int main(int argc, char** argv) {
     std::string execution;  //!< string to accumulate the execution output
 
     /******************ADD YOUR VARIABLES HERE*************************/
-    const int SAVE = 10;
-    const int RESTORE = 10;
+    const int SAVE = 20;
+    const int RESTORE = 30;
     const int FIND_VECTOR = 10;
     const int GET_ISR = 1;
     const int IRET = 1;

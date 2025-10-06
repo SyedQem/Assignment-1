@@ -1,0 +1,599 @@
+0, 54, CPU burst 
+54, 1, switch to kernel mode
+55, 10, context saved
+65, 1, find vector 14 in memory position 0x001C
+66, 1, load address 0X0165 into the PC
+67, 68, call device driver
+135, 56, validate parameters
+191, 264, enqueue request
+455, 68, update PCB
+523, 1, IRET 
+523, 39, CPU burst 
+562, 1, switch to kernel mode
+563, 10, context saved
+573, 1, find vector 14 in memory position 0x001C
+574, 1, load address 0X0165 into the PC
+575, 68, acknowledge device
+643, 38, record completion
+681, 282, read status register
+963, 68, unblock waiting process
+1031, 1, IRET 
+1031, 72, CPU burst 
+1103, 1, switch to kernel mode
+1104, 10, context saved
+1114, 1, find vector 19 in memory position 0x0026
+1115, 1, load address 0X0765 into the PC
+1116, 97, call device driver
+1213, 70, copy user buffer
+1283, 388, update file table
+1671, 97, update PCB
+1768, 1, IRET 
+1768, 28, CPU burst 
+1796, 1, switch to kernel mode
+1797, 10, context saved
+1807, 1, find vector 19 in memory position 0x0026
+1808, 1, load address 0X0765 into the PC
+1809, 97, acknowledge device
+1906, 271, read status register
+2177, 187, copy data to kernel buffer
+2364, 97, unblock waiting process
+2461, 1, IRET 
+2461, 32, CPU burst 
+2493, 1, switch to kernel mode
+2494, 10, context saved
+2504, 1, find vector 7 in memory position 0x000E
+2505, 1, load address 0X00BD into the PC
+2506, 22, call device driver
+2528, 54, copy user buffer
+2582, 54, validate parameters
+2636, 22, update PCB
+2658, 1, IRET 
+2658, 25, CPU burst 
+2683, 1, switch to kernel mode
+2684, 10, context saved
+2694, 1, find vector 7 in memory position 0x000E
+2695, 1, load address 0X00BD into the PC
+2696, 22, acknowledge device
+2718, 71, clear device flag
+2789, 37, record completion
+2826, 22, unblock waiting process
+2848, 1, IRET 
+2848, 11, CPU burst 
+2859, 1, switch to kernel mode
+2860, 10, context saved
+2870, 1, find vector 16 in memory position 0x0020
+2871, 1, load address 0X02DF into the PC
+2872, 143, call device driver
+3015, 359, update file table
+3374, 311, update file table
+3685, 143, update PCB
+3828, 1, IRET 
+3828, 54, CPU burst 
+3882, 1, switch to kernel mode
+3883, 10, context saved
+3893, 1, find vector 16 in memory position 0x0020
+3894, 1, load address 0X02DF into the PC
+3895, 143, acknowledge device
+4038, 484, clear device flag
+4522, 186, copy data to kernel buffer
+4708, 143, unblock waiting process
+4851, 1, IRET 
+4851, 96, CPU burst 
+4947, 1, switch to kernel mode
+4948, 10, context saved
+4958, 1, find vector 8 in memory position 0x0010
+4959, 1, load address 0X06EF into the PC
+4960, 150, call device driver
+5110, 60, validate parameters
+5170, 640, copy user buffer
+5810, 150, update PCB
+5960, 1, IRET 
+5960, 54, CPU burst 
+6014, 1, switch to kernel mode
+6015, 10, context saved
+6025, 1, find vector 8 in memory position 0x0010
+6026, 1, load address 0X06EF into the PC
+6027, 150, acknowledge device
+6177, 501, copy data to kernel buffer
+6678, 199, read status register
+6877, 150, unblock waiting process
+7027, 1, IRET 
+7027, 77, CPU burst 
+7104, 1, switch to kernel mode
+7105, 10, context saved
+7115, 1, find vector 11 in memory position 0x0016
+7116, 1, load address 0X01F8 into the PC
+7117, 78, call device driver
+7195, 325, copy user buffer
+7520, 42, enqueue request
+7562, 78, update PCB
+7640, 1, IRET 
+7640, 33, CPU burst 
+7673, 1, switch to kernel mode
+7674, 10, context saved
+7684, 1, find vector 11 in memory position 0x0016
+7685, 1, load address 0X01F8 into the PC
+7686, 78, acknowledge device
+7764, 113, copy data to kernel buffer
+7877, 254, read status register
+8131, 78, unblock waiting process
+8209, 1, IRET 
+8209, 60, CPU burst 
+8269, 1, switch to kernel mode
+8270, 10, context saved
+8280, 1, find vector 16 in memory position 0x0020
+8281, 1, load address 0X02DF into the PC
+8282, 143, call device driver
+8425, 568, copy user buffer
+8993, 102, copy user buffer
+9095, 143, update PCB
+9238, 1, IRET 
+9238, 21, CPU burst 
+9259, 1, switch to kernel mode
+9260, 10, context saved
+9270, 1, find vector 16 in memory position 0x0020
+9271, 1, load address 0X02DF into the PC
+9272, 143, acknowledge device
+9415, 66, record completion
+9481, 604, read status register
+10085, 143, unblock waiting process
+10228, 1, IRET 
+10228, 19, CPU burst 
+10247, 1, switch to kernel mode
+10248, 10, context saved
+10258, 1, find vector 2 in memory position 0x0004
+10259, 1, load address 0X0695 into the PC
+10260, 22, call device driver
+10282, 30, validate parameters
+10312, 76, set up DMA
+10388, 22, update PCB
+10410, 1, IRET 
+10410, 26, CPU burst 
+10436, 1, switch to kernel mode
+10437, 10, context saved
+10447, 1, find vector 2 in memory position 0x0004
+10448, 1, load address 0X0695 into the PC
+10449, 22, acknowledge device
+10471, 64, copy data to kernel buffer
+10535, 42, copy data to kernel buffer
+10577, 22, unblock waiting process
+10599, 1, IRET 
+10599, 38, CPU burst 
+10637, 1, switch to kernel mode
+10638, 10, context saved
+10648, 1, find vector 16 in memory position 0x0020
+10649, 1, load address 0X02DF into the PC
+10650, 143, call device driver
+10793, 356, enqueue request
+11149, 314, set up DMA
+11463, 143, update PCB
+11606, 1, IRET 
+11606, 28, CPU burst 
+11634, 1, switch to kernel mode
+11635, 10, context saved
+11645, 1, find vector 16 in memory position 0x0020
+11646, 1, load address 0X02DF into the PC
+11647, 143, acknowledge device
+11790, 558, copy data to kernel buffer
+12348, 112, copy data to kernel buffer
+12460, 143, unblock waiting process
+12603, 1, IRET 
+12603, 65, CPU burst 
+12668, 1, switch to kernel mode
+12669, 10, context saved
+12679, 1, find vector 16 in memory position 0x0020
+12680, 1, load address 0X02DF into the PC
+12681, 143, call device driver
+12824, 100, set up DMA
+12924, 570, enqueue request
+13494, 143, update PCB
+13637, 1, IRET 
+13637, 88, CPU burst 
+13725, 1, switch to kernel mode
+13726, 10, context saved
+13736, 1, find vector 16 in memory position 0x0020
+13737, 1, load address 0X02DF into the PC
+13738, 143, acknowledge device
+13881, 419, read status register
+14300, 251, copy data to kernel buffer
+14551, 143, unblock waiting process
+14694, 1, IRET 
+14694, 100, CPU burst 
+14794, 1, switch to kernel mode
+14795, 10, context saved
+14805, 1, find vector 17 in memory position 0x0022
+14806, 1, load address 0X05B3 into the PC
+14807, 35, call device driver
+14842, 24, enqueue request
+14866, 141, set up DMA
+15007, 35, update PCB
+15042, 1, IRET 
+15042, 28, CPU burst 
+15070, 1, switch to kernel mode
+15071, 10, context saved
+15081, 1, find vector 17 in memory position 0x0022
+15082, 1, load address 0X05B3 into the PC
+15083, 35, acknowledge device
+15118, 118, record completion
+15236, 47, read status register
+15283, 35, unblock waiting process
+15318, 1, IRET 
+15318, 25, CPU burst 
+15343, 1, switch to kernel mode
+15344, 10, context saved
+15354, 1, find vector 1 in memory position 0x0002
+15355, 1, load address 0X029C into the PC
+15356, 15, call device driver
+15371, 13, copy user buffer
+15384, 57, update file table
+15441, 15, update PCB
+15456, 1, IRET 
+15456, 21, CPU burst 
+15477, 1, switch to kernel mode
+15478, 10, context saved
+15488, 1, find vector 1 in memory position 0x0002
+15489, 1, load address 0X029C into the PC
+15490, 15, acknowledge device
+15505, 9, copy data to kernel buffer
+15514, 61, record completion
+15575, 15, unblock waiting process
+15590, 1, IRET 
+15590, 25, CPU burst 
+15615, 1, switch to kernel mode
+15616, 10, context saved
+15626, 1, find vector 19 in memory position 0x0026
+15627, 1, load address 0X0765 into the PC
+15628, 97, call device driver
+15725, 115, validate parameters
+15840, 343, enqueue request
+16183, 97, update PCB
+16280, 1, IRET 
+16280, 34, CPU burst 
+16314, 1, switch to kernel mode
+16315, 10, context saved
+16325, 1, find vector 19 in memory position 0x0026
+16326, 1, load address 0X0765 into the PC
+16327, 97, acknowledge device
+16424, 271, record completion
+16695, 187, copy data to kernel buffer
+16882, 97, unblock waiting process
+16979, 1, IRET 
+16979, 34, CPU burst 
+17013, 1, switch to kernel mode
+17014, 10, context saved
+17024, 1, find vector 8 in memory position 0x0010
+17025, 1, load address 0X06EF into the PC
+17026, 150, call device driver
+17176, 696, set up DMA
+17872, 4, update file table
+17876, 150, update PCB
+18026, 1, IRET 
+18026, 59, CPU burst 
+18085, 1, switch to kernel mode
+18086, 10, context saved
+18096, 1, find vector 8 in memory position 0x0010
+18097, 1, load address 0X06EF into the PC
+18098, 150, acknowledge device
+18248, 390, clear device flag
+18638, 310, read status register
+18948, 150, unblock waiting process
+19098, 1, IRET 
+19098, 44, CPU burst 
+19142, 1, switch to kernel mode
+19143, 10, context saved
+19153, 1, find vector 15 in memory position 0x001E
+19154, 1, load address 0X0584 into the PC
+19155, 10, call device driver
+19165, 48, enqueue request
+19213, 10, update PCB
+19223, 1, IRET 
+19223, 51, CPU burst 
+19274, 1, switch to kernel mode
+19275, 10, context saved
+19285, 1, find vector 15 in memory position 0x001E
+19286, 1, load address 0X0584 into the PC
+19287, 10, acknowledge device
+19297, 48, read status register
+19345, 10, unblock waiting process
+19355, 1, IRET 
+19355, 87, CPU burst 
+19442, 1, switch to kernel mode
+19443, 10, context saved
+19453, 1, find vector 11 in memory position 0x0016
+19454, 1, load address 0X01F8 into the PC
+19455, 78, call device driver
+19533, 288, enqueue request
+19821, 79, validate parameters
+19900, 78, update PCB
+19978, 1, IRET 
+19978, 65, CPU burst 
+20043, 1, switch to kernel mode
+20044, 10, context saved
+20054, 1, find vector 11 in memory position 0x0016
+20055, 1, load address 0X01F8 into the PC
+20056, 78, acknowledge device
+20134, 172, clear device flag
+20306, 195, clear device flag
+20501, 78, unblock waiting process
+20579, 1, IRET 
+20579, 48, CPU burst 
+20627, 1, switch to kernel mode
+20628, 10, context saved
+20638, 1, find vector 16 in memory position 0x0020
+20639, 1, load address 0X02DF into the PC
+20640, 143, call device driver
+20783, 314, validate parameters
+21097, 356, copy user buffer
+21453, 143, update PCB
+21596, 1, IRET 
+21596, 51, CPU burst 
+21647, 1, switch to kernel mode
+21648, 10, context saved
+21658, 1, find vector 16 in memory position 0x0020
+21659, 1, load address 0X02DF into the PC
+21660, 143, acknowledge device
+21803, 624, read status register
+22427, 46, copy data to kernel buffer
+22473, 143, unblock waiting process
+22616, 1, IRET 
+22616, 37, CPU burst 
+22653, 1, switch to kernel mode
+22654, 10, context saved
+22664, 1, find vector 1 in memory position 0x0002
+22665, 1, load address 0X029C into the PC
+22666, 15, call device driver
+22681, 8, copy user buffer
+22689, 62, update file table
+22751, 15, update PCB
+22766, 1, IRET 
+22766, 18, CPU burst 
+22784, 1, switch to kernel mode
+22785, 10, context saved
+22795, 1, find vector 1 in memory position 0x0002
+22796, 1, load address 0X029C into the PC
+22797, 15, acknowledge device
+22812, 33, read status register
+22845, 37, read status register
+22882, 15, unblock waiting process
+22897, 1, IRET 
+22897, 11, CPU burst 
+22908, 1, switch to kernel mode
+22909, 10, context saved
+22919, 1, find vector 2 in memory position 0x0004
+22920, 1, load address 0X0695 into the PC
+22921, 22, call device driver
+22943, 40, set up DMA
+22983, 66, update file table
+23049, 22, update PCB
+23071, 1, IRET 
+23071, 46, CPU burst 
+23117, 1, switch to kernel mode
+23118, 10, context saved
+23128, 1, find vector 2 in memory position 0x0004
+23129, 1, load address 0X0695 into the PC
+23130, 22, acknowledge device
+23152, 61, read status register
+23213, 45, copy data to kernel buffer
+23258, 22, unblock waiting process
+23280, 1, IRET 
+23280, 33, CPU burst 
+23313, 1, switch to kernel mode
+23314, 10, context saved
+23324, 1, find vector 12 in memory position 0x0018
+23325, 1, load address 0X03B9 into the PC
+23326, 21, call device driver
+23347, 39, copy user buffer
+23386, 64, enqueue request
+23450, 21, update PCB
+23471, 1, IRET 
+23471, 75, CPU burst 
+23546, 1, switch to kernel mode
+23547, 10, context saved
+23557, 1, find vector 12 in memory position 0x0018
+23558, 1, load address 0X03B9 into the PC
+23559, 21, acknowledge device
+23580, 17, copy data to kernel buffer
+23597, 86, copy data to kernel buffer
+23683, 21, unblock waiting process
+23704, 1, IRET 
+23704, 88, CPU burst 
+23792, 1, switch to kernel mode
+23793, 10, context saved
+23803, 1, find vector 18 in memory position 0x0024
+23804, 1, load address 0X060A into the PC
+23805, 18, call device driver
+23823, 66, validate parameters
+23889, 21, copy user buffer
+23910, 18, update PCB
+23928, 1, IRET 
+23928, 29, CPU burst 
+23957, 1, switch to kernel mode
+23958, 10, context saved
+23968, 1, find vector 18 in memory position 0x0024
+23969, 1, load address 0X060A into the PC
+23970, 18, acknowledge device
+23988, 5, clear device flag
+23993, 82, clear device flag
+24075, 18, unblock waiting process
+24093, 1, IRET 
+24093, 28, CPU burst 
+24121, 1, switch to kernel mode
+24122, 10, context saved
+24132, 1, find vector 1 in memory position 0x0002
+24133, 1, load address 0X029C into the PC
+24134, 15, call device driver
+24149, 52, enqueue request
+24201, 18, enqueue request
+24219, 15, update PCB
+24234, 1, IRET 
+24234, 69, CPU burst 
+24303, 1, switch to kernel mode
+24304, 10, context saved
+24314, 1, find vector 1 in memory position 0x0002
+24315, 1, load address 0X029C into the PC
+24316, 15, acknowledge device
+24331, 23, clear device flag
+24354, 47, copy data to kernel buffer
+24401, 15, unblock waiting process
+24416, 1, IRET 
+24416, 48, CPU burst 
+24464, 1, switch to kernel mode
+24465, 10, context saved
+24475, 1, find vector 4 in memory position 0x0008
+24476, 1, load address 0X0292 into the PC
+24477, 37, call device driver
+24514, 155, update file table
+24669, 21, update file table
+24690, 37, update PCB
+24727, 1, IRET 
+24727, 36, CPU burst 
+24763, 1, switch to kernel mode
+24764, 10, context saved
+24774, 1, find vector 4 in memory position 0x0008
+24775, 1, load address 0X0292 into the PC
+24776, 37, acknowledge device
+24813, 53, record completion
+24866, 123, copy data to kernel buffer
+24989, 37, unblock waiting process
+25026, 1, IRET 
+25026, 99, CPU burst 
+25125, 1, switch to kernel mode
+25126, 10, context saved
+25136, 1, find vector 18 in memory position 0x0024
+25137, 1, load address 0X060A into the PC
+25138, 18, call device driver
+25156, 85, update file table
+25241, 2, set up DMA
+25243, 18, update PCB
+25261, 1, IRET 
+25261, 56, CPU burst 
+25317, 1, switch to kernel mode
+25318, 10, context saved
+25328, 1, find vector 18 in memory position 0x0024
+25329, 1, load address 0X060A into the PC
+25330, 18, acknowledge device
+25348, 82, clear device flag
+25430, 5, read status register
+25435, 18, unblock waiting process
+25453, 1, IRET 
+25453, 61, CPU burst 
+25514, 1, switch to kernel mode
+25515, 10, context saved
+25525, 1, find vector 16 in memory position 0x0020
+25526, 1, load address 0X02DF into the PC
+25527, 143, call device driver
+25670, 72, copy user buffer
+25742, 598, enqueue request
+26340, 143, update PCB
+26483, 1, IRET 
+26483, 35, CPU burst 
+26518, 1, switch to kernel mode
+26519, 10, context saved
+26529, 1, find vector 16 in memory position 0x0020
+26530, 1, load address 0X02DF into the PC
+26531, 143, acknowledge device
+26674, 316, record completion
+26990, 354, read status register
+27344, 143, unblock waiting process
+27487, 1, IRET 
+27487, 54, CPU burst 
+27541, 1, switch to kernel mode
+27542, 10, context saved
+27552, 1, find vector 10 in memory position 0x0014
+27553, 1, load address 0X07B0 into the PC
+27554, 84, call device driver
+27638, 79, update file table
+27717, 317, update file table
+28034, 84, update PCB
+28118, 1, IRET 
+28118, 83, CPU burst 
+28201, 1, switch to kernel mode
+28202, 10, context saved
+28212, 1, find vector 10 in memory position 0x0014
+28213, 1, load address 0X07B0 into the PC
+28214, 84, acknowledge device
+28298, 378, read status register
+28676, 18, clear device flag
+28694, 84, unblock waiting process
+28778, 1, IRET 
+28778, 51, CPU burst 
+28829, 1, switch to kernel mode
+28830, 10, context saved
+28840, 1, find vector 11 in memory position 0x0016
+28841, 1, load address 0X01F8 into the PC
+28842, 78, call device driver
+28920, 132, update file table
+29052, 235, set up DMA
+29287, 78, update PCB
+29365, 1, IRET 
+29365, 85, CPU burst 
+29450, 1, switch to kernel mode
+29451, 10, context saved
+29461, 1, find vector 11 in memory position 0x0016
+29462, 1, load address 0X01F8 into the PC
+29463, 78, acknowledge device
+29541, 176, copy data to kernel buffer
+29717, 191, record completion
+29908, 78, unblock waiting process
+29986, 1, IRET 
+29986, 48, CPU burst 
+30034, 1, switch to kernel mode
+30035, 10, context saved
+30045, 1, find vector 6 in memory position 0x000C
+30046, 1, load address 0X0639 into the PC
+30047, 39, call device driver
+30086, 137, validate parameters
+30223, 50, enqueue request
+30273, 39, update PCB
+30312, 1, IRET 
+30312, 58, CPU burst 
+30370, 1, switch to kernel mode
+30371, 10, context saved
+30381, 1, find vector 6 in memory position 0x000C
+30382, 1, load address 0X0639 into the PC
+30383, 39, acknowledge device
+30422, 140, copy data to kernel buffer
+30562, 47, clear device flag
+30609, 39, unblock waiting process
+30648, 1, IRET 
+30648, 21, CPU burst 
+30669, 1, switch to kernel mode
+30670, 10, context saved
+30680, 1, find vector 5 in memory position 0x000A
+30681, 1, load address 0X048B into the PC
+30682, 31, call device driver
+30713, 66, set up DMA
+30779, 83, copy user buffer
+30862, 31, update PCB
+30893, 1, IRET 
+30893, 62, CPU burst 
+30955, 1, switch to kernel mode
+30956, 10, context saved
+30966, 1, find vector 5 in memory position 0x000A
+30967, 1, load address 0X048B into the PC
+30968, 31, acknowledge device
+30999, 23, copy data to kernel buffer
+31022, 126, read status register
+31148, 31, unblock waiting process
+31179, 1, IRET 
+31179, 41, CPU burst 
+31220, 1, switch to kernel mode
+31221, 10, context saved
+31231, 1, find vector 4 in memory position 0x0008
+31232, 1, load address 0X0292 into the PC
+31233, 37, call device driver
+31270, 30, set up DMA
+31300, 146, copy user buffer
+31446, 37, update PCB
+31483, 1, IRET 
+31483, 48, CPU burst 
+31531, 1, switch to kernel mode
+31532, 10, context saved
+31542, 1, find vector 4 in memory position 0x0008
+31543, 1, load address 0X0292 into the PC
+31544, 37, acknowledge device
+31581, 58, record completion
+31639, 118, clear device flag
+31757, 37, unblock waiting process
+31794, 1, IRET 
+31794, 63, CPU burst 

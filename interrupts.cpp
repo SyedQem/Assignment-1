@@ -154,9 +154,9 @@ int main(int argc, char** argv) {
         emit_line(t, execution, end, "unblock waiting process");
     };
 
-    // device_id -> queue of ints
+     //device_id -> queue of ints
 
-    // std::unordered_map<int, std::queue<int>> device_queues;
+     std::unordered_map<int, std::queue<int>> device_queues;
 
 
     /******************************************************************/
@@ -166,8 +166,31 @@ int main(int argc, char** argv) {
         auto [activity, duration_intr] = parse_trace(trace);
 
         /******************ADD YOUR SIMULATION CODE HERE*************************/
+        event current = trace_convert(activity, duration_intr);
+        logger(duration_intr, activity);
+        if (current.type == 0) mode=1;
+        else if(current.type == 2 || current.type == 1) mode=0;
 
+        if (mode == 1){
+            execution += std::to_string(t) + ", " + std::to_string(duration_intr)+ ", CPU burst \n";
+            t += duration_intr;
+        }
+        else if(mode == 0){
+            std::pair<std::string, int> boiler_plate = intr_boilerplate(t,duration_intr,SAVE,vectors);
+            execution += boiler_plate.first;
+            t = boiler_plate.second;
+            long long when = t + delays.at(duration_intr); 
 
+            if(current.type == 2){
+                syscall_body(t,duration_intr,delays.at(duration_intr),execution);
+                device_queues[duration_intr].push(when);
+            }
+            else if(current.type == 1){
+                endio_body(t,duration_intr,delays.at(duration_intr),execution);
+                device_queues[duration_intr].pop();
+            }
+            execution += std::to_string(t) + ", 1, IRET \n";
+        }    
 
         /************************************************************************/
 

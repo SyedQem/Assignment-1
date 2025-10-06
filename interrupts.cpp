@@ -1,7 +1,7 @@
 /**
  *
  * @file interrupts.cpp
- * @author Sasisekhar Govind
+ * @author Qurb E Muhammad Syed
  *
  */
 
@@ -19,6 +19,58 @@ int main(int argc, char** argv) {
     std::string execution;  //!< string to accumulate the execution output
 
     /******************ADD YOUR VARIABLES HERE*************************/
+    const int SAVE = 10;
+    const int RESTORE = 10;
+    const int FIND_VECTOR = 10;
+    const int GET_ISR = 1;
+    const int IRET = 1;
+
+    const int VECTOR_ENTRY_BYTES = 2;
+
+    struct event {
+        enum Type {CPU,END_IO, SYSCALL};
+        Type type;
+        int dur;
+    };
+
+    struct logLine {
+        long long start;
+        int dur;
+        std::string text;
+    };
+
+    long long t = 0;
+    int mode = 1;
+    
+    std::vector<logLine> out;
+    std::vector<event> tracefile;
+    std::srand(std::time(nullptr));
+
+
+    const std::vector<std::string> SYSCALL_MIDDLE = {
+    "validate parameters", "copy user buffer",
+    "set up DMA", "enqueue request", "update file table"
+    };
+    const std::vector<std::string> ENDIO_MIDDLE = {
+        "read status register", "copy data to kernel buffer",
+        "clear device flag", "record completion"
+    };
+    // helper functions
+
+    auto trace_convert = [](std::string type, int dur){
+        event::Type t;
+
+        if (type == "CPU")       t = event::CPU;
+        else if (type == "END_IO") t = event::END_IO;
+        else if (type == "SYSCALL") t = event::SYSCALL;
+        else throw std::invalid_argument("Unknown type");
+
+        return event{t, dur};
+    };
+
+    auto logger = [&t, &out](int dur, std::string activity){
+        out.push_back({t, dur, activity});
+    };
 
 
 

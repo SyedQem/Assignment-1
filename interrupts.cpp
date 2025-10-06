@@ -72,6 +72,91 @@ int main(int argc, char** argv) {
         out.push_back({t, dur, activity});
     };
 
+    auto emit_line = [&](long long& t, std::string& execution, int dur, const std::string& text) {
+        execution += std::to_string(t) + ", " + std::to_string(dur) + ", " + text + "\n";
+        t += dur;
+    };
+
+    auto split_middle_random = [&](int R, int M) -> std::vector<int> {
+        std::vector<int> mids;
+        if (M <= 0) return mids;
+        if (M == 1) { mids.push_back(R); return mids; }
+
+        // M == 2: random cut
+        int a = 1 + (std::rand() % (R - 1)); // between 1 and R-1
+        mids.push_back(a);
+        mids.push_back(R - a);
+        return mids;
+    };
+
+    auto pick_random_label = [&](const std::vector<std::string>& pool) -> const std::string& {
+        int idx = std::rand() % pool.size();
+        return pool[idx];
+    };
+
+    auto syscall_body = [&](long long& t, int dev, int delay, std::string& execution) {
+        int K = (delay >= 80) ? 4 : 3;
+        if (delay < K) K = delay; // clamp if delay is tiny
+
+        // anchors
+        int start = std::max(1, delay * 15 / 100);
+        int end   = std::max(1, delay * 15 / 100);
+
+        // if anchors get too big shrink
+        if (start + end > delay) {
+            start = std::max(1, delay - 1);
+            end   = delay - start;
+        }
+
+        int M = K - 2;                 
+        int R = delay - start - end;   // leftover 
+
+        emit_line(t, execution, start, "call device driver");
+
+        if (M == 1) {
+            emit_line(t, execution, R, pick_random_label(SYSCALL_MIDDLE));
+        } else if (M == 2) {
+            int a = 1 + (std::rand() % (R - 1)); 
+            int b = R - a;
+            emit_line(t, execution, a, pick_random_label(SYSCALL_MIDDLE));
+            emit_line(t, execution, b, pick_random_label(SYSCALL_MIDDLE));
+        }
+
+        emit_line(t, execution, end, "update PCB");
+    };
+
+     auto endio_body = [&](long long& t, int dev, int delay, std::string& execution) {
+        int K = (delay >= 80) ? 4 : 3;
+        if (delay < K) K = delay;
+
+        int start = std::max(1, delay * 15 / 100);
+        int end   = std::max(1, delay * 15 / 100);
+
+        if (start + end > delay) {
+            start = std::max(1, delay - 1);
+            end   = delay - start;
+        }
+
+        int M = K - 2;
+        int R = delay - start - end;
+
+        emit_line(t, execution, start, "acknowledge device");
+
+        if (M == 1) {
+            emit_line(t, execution, R, pick_random_label(ENDIO_MIDDLE));
+        } else if (M == 2) {
+            int a = 1 + (std::rand() % (R - 1));
+            int b = R - a;
+            emit_line(t, execution, a, pick_random_label(ENDIO_MIDDLE));
+            emit_line(t, execution, b, pick_random_label(ENDIO_MIDDLE));
+        }
+
+        emit_line(t, execution, end, "unblock waiting process");
+    };
+
+    // device_id -> queue of ints
+
+    // std::unordered_map<int, std::queue<int>> device_queues;
 
 
     /******************************************************************/

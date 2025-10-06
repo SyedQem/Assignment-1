@@ -5,7 +5,7 @@
  *
  */
 
-#include<interrupts.hpp>
+#include"interrupts.hpp"
 
 int main(int argc, char** argv) {
 
@@ -180,6 +180,8 @@ int main(int argc, char** argv) {
             execution += boiler_plate.first;
             t = boiler_plate.second;
             long long when = t + delays.at(duration_intr); 
+
+            // Relating to the ISR
 
             if(current.type == 2){
                 syscall_body(t,duration_intr,delays.at(duration_intr),execution);

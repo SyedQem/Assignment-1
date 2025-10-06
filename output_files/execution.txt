@@ -4,8 +4,8 @@
 62, 1, find vector 14 in memory position 0x001C
 63, 1, load address 0X0165 into the PC
 64, 68, call device driver
-132, 137, enqueue request
-269, 183, set up DMA
+132, 226, set up DMA
+358, 94, enqueue request
 452, 68, update PCB
 520, 1, IRET 
 520, 66, CPU burst 
@@ -14,8 +14,8 @@
 597, 1, find vector 14 in memory position 0x001C
 598, 1, load address 0X0165 into the PC
 599, 68, acknowledge device
-667, 273, copy data to kernel buffer
-940, 47, record completion
+667, 17, copy data to kernel buffer
+684, 303, clear device flag
 987, 68, unblock waiting process
 1055, 1, IRET 
 1055, 72, CPU burst 
@@ -24,8 +24,8 @@
 1138, 1, find vector 19 in memory position 0x0026
 1139, 1, load address 0X0765 into the PC
 1140, 97, call device driver
-1237, 371, copy user buffer
-1608, 87, copy user buffer
+1237, 234, enqueue request
+1471, 224, enqueue request
 1695, 97, update PCB
 1792, 1, IRET 
 1792, 28, CPU burst 
@@ -34,8 +34,8 @@
 1831, 1, find vector 19 in memory position 0x0026
 1832, 1, load address 0X0765 into the PC
 1833, 97, acknowledge device
-1930, 286, read status register
-2216, 172, read status register
+1930, 111, record completion
+2041, 347, copy data to kernel buffer
 2388, 97, unblock waiting process
 2485, 1, IRET 
 2485, 32, CPU burst 
@@ -44,8 +44,8 @@
 2528, 1, find vector 7 in memory position 0x000E
 2529, 1, load address 0X00BD into the PC
 2530, 22, call device driver
-2552, 26, validate parameters
-2578, 82, validate parameters
+2552, 37, update file table
+2589, 71, validate parameters
 2660, 22, update PCB
 2682, 1, IRET 
 2682, 25, CPU burst 
@@ -54,8 +54,8 @@
 2718, 1, find vector 7 in memory position 0x000E
 2719, 1, load address 0X00BD into the PC
 2720, 22, acknowledge device
-2742, 49, clear device flag
-2791, 59, clear device flag
+2742, 76, clear device flag
+2818, 32, read status register
 2850, 22, unblock waiting process
 2872, 1, IRET 
 2872, 11, CPU burst 
@@ -64,8 +64,8 @@
 2894, 1, find vector 16 in memory position 0x0020
 2895, 1, load address 0X02DF into the PC
 2896, 143, call device driver
-3039, 135, enqueue request
-3174, 535, copy user buffer
+3039, 590, update file table
+3629, 80, update file table
 3709, 143, update PCB
 3852, 1, IRET 
 3852, 54, CPU burst 
@@ -74,8 +74,8 @@
 3917, 1, find vector 16 in memory position 0x0020
 3918, 1, load address 0X02DF into the PC
 3919, 143, acknowledge device
-4062, 419, copy data to kernel buffer
-4481, 251, copy data to kernel buffer
+4062, 85, clear device flag
+4147, 585, clear device flag
 4732, 143, unblock waiting process
 4875, 1, IRET 
 4875, 96, CPU burst 
@@ -84,8 +84,8 @@
 4982, 1, find vector 8 in memory position 0x0010
 4983, 1, load address 0X06EF into the PC
 4984, 150, call device driver
-5134, 464, update file table
-5598, 236, copy user buffer
+5134, 37, enqueue request
+5171, 663, set up DMA
 5834, 150, update PCB
 5984, 1, IRET 
 5984, 54, CPU burst 
@@ -94,8 +94,8 @@
 6049, 1, find vector 8 in memory position 0x0010
 6050, 1, load address 0X06EF into the PC
 6051, 150, acknowledge device
-6201, 215, copy data to kernel buffer
-6416, 485, record completion
+6201, 369, copy data to kernel buffer
+6570, 331, copy data to kernel buffer
 6901, 150, unblock waiting process
 7051, 1, IRET 
 7051, 77, CPU burst 
@@ -104,8 +104,8 @@
 7139, 1, find vector 11 in memory position 0x0016
 7140, 1, load address 0X01F8 into the PC
 7141, 78, call device driver
-7219, 249, update file table
-7468, 118, update file table
+7219, 140, copy user buffer
+7359, 227, enqueue request
 7586, 78, update PCB
 7664, 1, IRET 
 7664, 33, CPU burst 
@@ -114,8 +114,8 @@
 7708, 1, find vector 11 in memory position 0x0016
 7709, 1, load address 0X01F8 into the PC
 7710, 78, acknowledge device
-7788, 213, record completion
-8001, 154, clear device flag
+7788, 93, record completion
+7881, 274, copy data to kernel buffer
 8155, 78, unblock waiting process
 8233, 1, IRET 
 8233, 60, CPU burst 
@@ -124,8 +124,8 @@
 8304, 1, find vector 16 in memory position 0x0020
 8305, 1, load address 0X02DF into the PC
 8306, 143, call device driver
-8449, 12, set up DMA
-8461, 658, copy user buffer
+8449, 534, set up DMA
+8983, 136, validate parameters
 9119, 143, update PCB
 9262, 1, IRET 
 9262, 21, CPU burst 
@@ -134,8 +134,8 @@
 9294, 1, find vector 16 in memory position 0x0020
 9295, 1, load address 0X02DF into the PC
 9296, 143, acknowledge device
-9439, 339, clear device flag
-9778, 331, record completion
+9439, 426, read status register
+9865, 244, clear device flag
 10109, 143, unblock waiting process
 10252, 1, IRET 
 10252, 19, CPU burst 
@@ -144,8 +144,8 @@
 10282, 1, find vector 2 in memory position 0x0004
 10283, 1, load address 0X0695 into the PC
 10284, 22, call device driver
-10306, 41, validate parameters
-10347, 65, copy user buffer
+10306, 103, copy user buffer
+10409, 3, update file table
 10412, 22, update PCB
 10434, 1, IRET 
 10434, 26, CPU burst 
@@ -154,8 +154,8 @@
 10471, 1, find vector 2 in memory position 0x0004
 10472, 1, load address 0X0695 into the PC
 10473, 22, acknowledge device
-10495, 17, clear device flag
-10512, 89, read status register
+10495, 104, clear device flag
+10599, 2, copy data to kernel buffer
 10601, 22, unblock waiting process
 10623, 1, IRET 
 10623, 38, CPU burst 
@@ -164,8 +164,8 @@
 10672, 1, find vector 16 in memory position 0x0020
 10673, 1, load address 0X02DF into the PC
 10674, 143, call device driver
-10817, 511, set up DMA
-11328, 159, update file table
+10817, 532, update file table
+11349, 138, copy user buffer
 11487, 143, update PCB
 11630, 1, IRET 
 11630, 28, CPU burst 
@@ -174,8 +174,8 @@
 11669, 1, find vector 16 in memory position 0x0020
 11670, 1, load address 0X02DF into the PC
 11671, 143, acknowledge device
-11814, 125, record completion
-11939, 545, record completion
+11814, 181, record completion
+11995, 489, clear device flag
 12484, 143, unblock waiting process
 12627, 1, IRET 
 12627, 65, CPU burst 
@@ -184,8 +184,8 @@
 12703, 1, find vector 16 in memory position 0x0020
 12704, 1, load address 0X02DF into the PC
 12705, 143, call device driver
-12848, 188, set up DMA
-13036, 482, copy user buffer
+12848, 58, update file table
+12906, 612, enqueue request
 13518, 143, update PCB
 13661, 1, IRET 
 13661, 88, CPU burst 
@@ -194,8 +194,8 @@
 13760, 1, find vector 16 in memory position 0x0020
 13761, 1, load address 0X02DF into the PC
 13762, 143, acknowledge device
-13905, 374, read status register
-14279, 296, clear device flag
+13905, 631, copy data to kernel buffer
+14536, 39, copy data to kernel buffer
 14575, 143, unblock waiting process
 14718, 1, IRET 
 14718, 100, CPU burst 
@@ -204,8 +204,8 @@
 14829, 1, find vector 17 in memory position 0x0022
 14830, 1, load address 0X05B3 into the PC
 14831, 35, call device driver
-14866, 46, set up DMA
-14912, 119, set up DMA
+14866, 36, enqueue request
+14902, 129, copy user buffer
 15031, 35, update PCB
 15066, 1, IRET 
 15066, 28, CPU burst 
@@ -214,8 +214,8 @@
 15105, 1, find vector 17 in memory position 0x0022
 15106, 1, load address 0X05B3 into the PC
 15107, 35, acknowledge device
-15142, 4, clear device flag
-15146, 161, record completion
+15142, 150, record completion
+15292, 15, copy data to kernel buffer
 15307, 35, unblock waiting process
 15342, 1, IRET 
 15342, 25, CPU burst 
@@ -224,8 +224,8 @@
 15378, 1, find vector 1 in memory position 0x0002
 15379, 1, load address 0X029C into the PC
 15380, 15, call device driver
-15395, 66, set up DMA
-15461, 4, update file table
+15395, 68, update file table
+15463, 2, update file table
 15465, 15, update PCB
 15480, 1, IRET 
 15480, 21, CPU burst 
@@ -234,8 +234,8 @@
 15512, 1, find vector 1 in memory position 0x0002
 15513, 1, load address 0X029C into the PC
 15514, 15, acknowledge device
-15529, 38, clear device flag
-15567, 32, copy data to kernel buffer
+15529, 46, clear device flag
+15575, 24, record completion
 15599, 15, unblock waiting process
 15614, 1, IRET 
 15614, 25, CPU burst 
@@ -244,8 +244,8 @@
 15650, 1, find vector 19 in memory position 0x0026
 15651, 1, load address 0X0765 into the PC
 15652, 97, call device driver
-15749, 240, update file table
-15989, 218, copy user buffer
+15749, 336, validate parameters
+16085, 122, validate parameters
 16207, 97, update PCB
 16304, 1, IRET 
 16304, 34, CPU burst 
@@ -254,8 +254,8 @@
 16349, 1, find vector 19 in memory position 0x0026
 16350, 1, load address 0X0765 into the PC
 16351, 97, acknowledge device
-16448, 448, copy data to kernel buffer
-16896, 10, copy data to kernel buffer
+16448, 423, clear device flag
+16871, 35, clear device flag
 16906, 97, unblock waiting process
 17003, 1, IRET 
 17003, 34, CPU burst 
@@ -264,8 +264,8 @@
 17048, 1, find vector 8 in memory position 0x0010
 17049, 1, load address 0X06EF into the PC
 17050, 150, call device driver
-17200, 131, set up DMA
-17331, 569, copy user buffer
+17200, 335, enqueue request
+17535, 365, set up DMA
 17900, 150, update PCB
 18050, 1, IRET 
 18050, 59, CPU burst 
@@ -274,8 +274,8 @@
 18120, 1, find vector 8 in memory position 0x0010
 18121, 1, load address 0X06EF into the PC
 18122, 150, acknowledge device
-18272, 603, clear device flag
-18875, 97, clear device flag
+18272, 353, clear device flag
+18625, 347, copy data to kernel buffer
 18972, 150, unblock waiting process
 19122, 1, IRET 
 19122, 44, CPU burst 
@@ -284,7 +284,7 @@
 19177, 1, find vector 15 in memory position 0x001E
 19178, 1, load address 0X0584 into the PC
 19179, 10, call device driver
-19189, 48, update file table
+19189, 48, copy user buffer
 19237, 10, update PCB
 19247, 1, IRET 
 19247, 51, CPU burst 
@@ -293,7 +293,7 @@
 19309, 1, find vector 15 in memory position 0x001E
 19310, 1, load address 0X0584 into the PC
 19311, 10, acknowledge device
-19321, 48, copy data to kernel buffer
+19321, 48, record completion
 19369, 10, unblock waiting process
 19379, 1, IRET 
 19379, 87, CPU burst 
@@ -302,8 +302,8 @@
 19477, 1, find vector 11 in memory position 0x0016
 19478, 1, load address 0X01F8 into the PC
 19479, 78, call device driver
-19557, 193, update file table
-19750, 174, copy user buffer
+19557, 263, validate parameters
+19820, 104, set up DMA
 19924, 78, update PCB
 20002, 1, IRET 
 20002, 65, CPU burst 
@@ -312,8 +312,8 @@
 20078, 1, find vector 11 in memory position 0x0016
 20079, 1, load address 0X01F8 into the PC
 20080, 78, acknowledge device
-20158, 257, clear device flag
-20415, 110, record completion
+20158, 33, clear device flag
+20191, 334, read status register
 20525, 78, unblock waiting process
 20603, 1, IRET 
 20603, 48, CPU burst 
@@ -322,8 +322,8 @@
 20662, 1, find vector 16 in memory position 0x0020
 20663, 1, load address 0X02DF into the PC
 20664, 143, call device driver
-20807, 127, enqueue request
-20934, 543, update file table
+20807, 27, set up DMA
+20834, 643, update file table
 21477, 143, update PCB
 21620, 1, IRET 
 21620, 51, CPU burst 
@@ -332,8 +332,8 @@
 21682, 1, find vector 16 in memory position 0x0020
 21683, 1, load address 0X02DF into the PC
 21684, 143, acknowledge device
-21827, 555, copy data to kernel buffer
-22382, 115, copy data to kernel buffer
+21827, 609, clear device flag
+22436, 61, clear device flag
 22497, 143, unblock waiting process
 22640, 1, IRET 
 22640, 37, CPU burst 
@@ -342,8 +342,8 @@
 22688, 1, find vector 1 in memory position 0x0002
 22689, 1, load address 0X029C into the PC
 22690, 15, call device driver
-22705, 43, copy user buffer
-22748, 27, copy user buffer
+22705, 48, update file table
+22753, 22, enqueue request
 22775, 15, update PCB
 22790, 1, IRET 
 22790, 18, CPU burst 
@@ -352,8 +352,8 @@
 22819, 1, find vector 1 in memory position 0x0002
 22820, 1, load address 0X029C into the PC
 22821, 15, acknowledge device
-22836, 51, read status register
-22887, 19, copy data to kernel buffer
+22836, 16, clear device flag
+22852, 54, copy data to kernel buffer
 22906, 15, unblock waiting process
 22921, 1, IRET 
 22921, 11, CPU burst 
@@ -362,8 +362,8 @@
 22943, 1, find vector 2 in memory position 0x0004
 22944, 1, load address 0X0695 into the PC
 22945, 22, call device driver
-22967, 22, validate parameters
-22989, 84, copy user buffer
+22967, 88, update file table
+23055, 18, enqueue request
 23073, 22, update PCB
 23095, 1, IRET 
 23095, 46, CPU burst 
@@ -372,8 +372,8 @@
 23152, 1, find vector 2 in memory position 0x0004
 23153, 1, load address 0X0695 into the PC
 23154, 22, acknowledge device
-23176, 52, record completion
-23228, 54, copy data to kernel buffer
+23176, 89, record completion
+23265, 17, clear device flag
 23282, 22, unblock waiting process
 23304, 1, IRET 
 23304, 33, CPU burst 
@@ -382,8 +382,8 @@
 23348, 1, find vector 12 in memory position 0x0018
 23349, 1, load address 0X03B9 into the PC
 23350, 21, call device driver
-23371, 66, set up DMA
-23437, 37, copy user buffer
+23371, 54, copy user buffer
+23425, 49, validate parameters
 23474, 21, update PCB
 23495, 1, IRET 
 23495, 75, CPU burst 
@@ -392,8 +392,8 @@
 23581, 1, find vector 12 in memory position 0x0018
 23582, 1, load address 0X03B9 into the PC
 23583, 21, acknowledge device
-23604, 52, record completion
-23656, 51, record completion
+23604, 30, clear device flag
+23634, 73, record completion
 23707, 21, unblock waiting process
 23728, 1, IRET 
 23728, 88, CPU burst 
@@ -402,8 +402,8 @@
 23827, 1, find vector 18 in memory position 0x0024
 23828, 1, load address 0X060A into the PC
 23829, 18, call device driver
-23847, 41, copy user buffer
-23888, 46, set up DMA
+23847, 56, copy user buffer
+23903, 31, validate parameters
 23934, 18, update PCB
 23952, 1, IRET 
 23952, 29, CPU burst 
@@ -412,8 +412,8 @@
 23992, 1, find vector 18 in memory position 0x0024
 23993, 1, load address 0X060A into the PC
 23994, 18, acknowledge device
-24012, 42, read status register
-24054, 45, clear device flag
+24012, 27, record completion
+24039, 60, read status register
 24099, 18, unblock waiting process
 24117, 1, IRET 
 24117, 28, CPU burst 
@@ -422,8 +422,8 @@
 24156, 1, find vector 1 in memory position 0x0002
 24157, 1, load address 0X029C into the PC
 24158, 15, call device driver
-24173, 69, update file table
-24242, 1, update file table
+24173, 63, validate parameters
+24236, 7, copy user buffer
 24243, 15, update PCB
 24258, 1, IRET 
 24258, 69, CPU burst 
@@ -432,8 +432,8 @@
 24338, 1, find vector 1 in memory position 0x0002
 24339, 1, load address 0X029C into the PC
 24340, 15, acknowledge device
-24355, 53, record completion
-24408, 17, copy data to kernel buffer
+24355, 23, clear device flag
+24378, 47, clear device flag
 24425, 15, unblock waiting process
 24440, 1, IRET 
 24440, 48, CPU burst 
@@ -442,8 +442,8 @@
 24499, 1, find vector 4 in memory position 0x0008
 24500, 1, load address 0X0292 into the PC
 24501, 37, call device driver
-24538, 76, enqueue request
-24614, 100, copy user buffer
+24538, 130, enqueue request
+24668, 46, enqueue request
 24714, 37, update PCB
 24751, 1, IRET 
 24751, 36, CPU burst 
@@ -452,8 +452,8 @@
 24798, 1, find vector 4 in memory position 0x0008
 24799, 1, load address 0X0292 into the PC
 24800, 37, acknowledge device
-24837, 155, record completion
-24992, 21, copy data to kernel buffer
+24837, 133, record completion
+24970, 43, clear device flag
 25013, 37, unblock waiting process
 25050, 1, IRET 
 25050, 99, CPU burst 
@@ -462,8 +462,8 @@
 25160, 1, find vector 18 in memory position 0x0024
 25161, 1, load address 0X060A into the PC
 25162, 18, call device driver
-25180, 86, enqueue request
-25266, 1, enqueue request
+25180, 26, set up DMA
+25206, 61, enqueue request
 25267, 18, update PCB
 25285, 1, IRET 
 25285, 56, CPU burst 
@@ -472,8 +472,8 @@
 25352, 1, find vector 18 in memory position 0x0024
 25353, 1, load address 0X060A into the PC
 25354, 18, acknowledge device
-25372, 27, copy data to kernel buffer
-25399, 60, clear device flag
+25372, 21, read status register
+25393, 66, clear device flag
 25459, 18, unblock waiting process
 25477, 1, IRET 
 25477, 61, CPU burst 
@@ -482,8 +482,8 @@
 25549, 1, find vector 16 in memory position 0x0020
 25550, 1, load address 0X02DF into the PC
 25551, 143, call device driver
-25694, 339, enqueue request
-26033, 331, update file table
+25694, 601, update file table
+26295, 69, set up DMA
 26364, 143, update PCB
 26507, 1, IRET 
 26507, 35, CPU burst 
@@ -492,8 +492,8 @@
 26553, 1, find vector 16 in memory position 0x0020
 26554, 1, load address 0X02DF into the PC
 26555, 143, acknowledge device
-26698, 237, clear device flag
-26935, 433, record completion
+26698, 461, copy data to kernel buffer
+27159, 209, record completion
 27368, 143, unblock waiting process
 27511, 1, IRET 
 27511, 54, CPU burst 
@@ -502,8 +502,8 @@
 27576, 1, find vector 10 in memory position 0x0014
 27577, 1, load address 0X07B0 into the PC
 27578, 84, call device driver
-27662, 239, update file table
-27901, 157, copy user buffer
+27662, 133, validate parameters
+27795, 263, copy user buffer
 28058, 84, update PCB
 28142, 1, IRET 
 28142, 83, CPU burst 
@@ -512,8 +512,8 @@
 28236, 1, find vector 10 in memory position 0x0014
 28237, 1, load address 0X07B0 into the PC
 28238, 84, acknowledge device
-28322, 12, clear device flag
-28334, 384, read status register
+28322, 262, record completion
+28584, 134, copy data to kernel buffer
 28718, 84, unblock waiting process
 28802, 1, IRET 
 28802, 51, CPU burst 
@@ -522,8 +522,8 @@
 28864, 1, find vector 11 in memory position 0x0016
 28865, 1, load address 0X01F8 into the PC
 28866, 78, call device driver
-28944, 118, enqueue request
-29062, 249, set up DMA
+28944, 365, set up DMA
+29309, 2, validate parameters
 29311, 78, update PCB
 29389, 1, IRET 
 29389, 85, CPU burst 
@@ -532,8 +532,8 @@
 29485, 1, find vector 11 in memory position 0x0016
 29486, 1, load address 0X01F8 into the PC
 29487, 78, acknowledge device
-29565, 217, read status register
-29782, 150, read status register
+29565, 85, record completion
+29650, 282, read status register
 29932, 78, unblock waiting process
 30010, 1, IRET 
 30010, 48, CPU burst 
@@ -542,8 +542,8 @@
 30069, 1, find vector 6 in memory position 0x000C
 30070, 1, load address 0X0639 into the PC
 30071, 39, call device driver
-30110, 11, copy user buffer
-30121, 176, copy user buffer
+30110, 6, update file table
+30116, 181, copy user buffer
 30297, 39, update PCB
 30336, 1, IRET 
 30336, 58, CPU burst 
@@ -552,8 +552,8 @@
 30405, 1, find vector 6 in memory position 0x000C
 30406, 1, load address 0X0639 into the PC
 30407, 39, acknowledge device
-30446, 104, clear device flag
-30550, 83, record completion
+30446, 133, record completion
+30579, 54, read status register
 30633, 39, unblock waiting process
 30672, 1, IRET 
 30672, 21, CPU burst 
@@ -562,8 +562,8 @@
 30704, 1, find vector 5 in memory position 0x000A
 30705, 1, load address 0X048B into the PC
 30706, 31, call device driver
-30737, 44, copy user buffer
-30781, 105, copy user buffer
+30737, 108, validate parameters
+30845, 41, update file table
 30886, 31, update PCB
 30917, 1, IRET 
 30917, 62, CPU burst 
@@ -572,8 +572,8 @@
 30990, 1, find vector 5 in memory position 0x000A
 30991, 1, load address 0X048B into the PC
 30992, 31, acknowledge device
-31023, 113, copy data to kernel buffer
-31136, 36, read status register
+31023, 50, clear device flag
+31073, 99, record completion
 31172, 31, unblock waiting process
 31203, 1, IRET 
 31203, 41, CPU burst 
@@ -582,8 +582,8 @@
 31255, 1, find vector 4 in memory position 0x0008
 31256, 1, load address 0X0292 into the PC
 31257, 37, call device driver
-31294, 166, copy user buffer
-31460, 10, set up DMA
+31294, 108, set up DMA
+31402, 68, update file table
 31470, 37, update PCB
 31507, 1, IRET 
 31507, 48, CPU burst 
@@ -592,8 +592,8 @@
 31566, 1, find vector 4 in memory position 0x0008
 31567, 1, load address 0X0292 into the PC
 31568, 37, acknowledge device
-31605, 81, read status register
-31686, 95, copy data to kernel buffer
+31605, 103, copy data to kernel buffer
+31708, 73, record completion
 31781, 37, unblock waiting process
 31818, 1, IRET 
 31818, 63, CPU burst 
